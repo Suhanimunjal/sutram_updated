@@ -6941,6 +6941,110 @@ body.error-page {
   line-height: 1.7;
 }
 
+.guidelines-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 43, 72, 0.12);
+  border-radius: 14px;
+  padding: 36px 34px;
+  box-shadow: 0 5px 18px rgba(15, 43, 72, 0.06);
+}
+
+.guidelines-intro {
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.guidelines-section-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guidelines-intro h2 {
+  margin-bottom: 10px;
+  color: var(--ink-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.2;
+}
+
+.guidelines-intro p,
+.guideline-item li {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.guidelines-list {
+  display: grid;
+  gap: 0;
+}
+
+.guideline-item {
+  padding: 25px 0 23px;
+  border-bottom: 1px solid var(--line);
+}
+
+.guideline-item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.guideline-item h3 {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 11px;
+  color: var(--ink-primary);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.guideline-item h3 span {
+  min-width: 42px;
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.guideline-item ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.guideline-item li::marker {
+  color: var(--gold);
+}
+
+[data-theme="dark"] .guidelines-card {
+  background: var(--hx-surface);
+  border-color: var(--hx-line);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .guidelines-intro,
+[data-theme="dark"] .guideline-item {
+  border-color: var(--hx-line);
+}
+
+[data-theme="dark"] .guidelines-intro h2,
+[data-theme="dark"] .guideline-item h3 {
+  color: var(--hx-text);
+}
+
+[data-theme="dark"] .guidelines-intro p,
+[data-theme="dark"] .guideline-item li {
+  color: var(--hx-dim);
+}
+
 /* Timeline page — list of 9 milestones */
 .timeline-list {
   display: flex;
@@ -10435,7 +10539,7 @@ html[data-theme="light"] .track {
 
 
 /* ============================================================
-   FAQ PAGE � ANIMATED COMPONENTS
+   FAQ PAGE � ANIMATED COMPONENTS
    ============================================================ */
 
 /* ---------- Floating orbs ---------- */
@@ -10755,3 +10859,825 @@ html[data-theme="light"] .track {
 .faq-acc-inner a { color:#168bb7;font-weight:600;text-decoration:none;border-bottom:1px dashed rgba(22,139,183,0.4);transition:border-color 0.2s; }
 .faq-acc-inner a:hover { border-color:#168bb7; }
 .faq-acc-inner strong { color:#183d68; }
+
+
+/* ── TIMELINE PHASE BADGES ── */
+.vtl-phase-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  margin-left: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0, 180, 216, 0.12);
+  color: #0077b6;
+  border: 1px solid rgba(0, 180, 216, 0.25);
+}
+
+[data-theme="dark"] .vtl-phase-badge {
+  background: rgba(0, 229, 255, 0.12);
+  color: #00e5ff;
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+/* Fix timeline-page countdown numbers visibility in light mode */
+.timeline-page .vtl-countdown .vtl-countdown-value {
+  color: #0e2247 !important;
+}
+
+[data-theme="dark"] .timeline-page .vtl-countdown .vtl-countdown-value {
+  color: #00e5ff !important;
+}
+
+.timeline-page .vtl-countdown .vtl-countdown-unit {
+  background: rgba(14, 34, 71, 0.04) !important;
+  border-color: rgba(14, 34, 71, 0.12) !important;
+}
+
+[data-theme="dark"] .timeline-page .vtl-countdown .vtl-countdown-unit {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(0, 229, 255, 0.25) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   EVENT BROCHURE DOWNLOAD & VIEWER SHOWCASE
+   ══════════════════════════════════════════════════════════════════ */
+.brochure-showcase {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.brochure-hero-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1.5px solid rgba(22, 139, 183, 0.16);
+  box-shadow: 0 16px 40px rgba(14, 34, 71, 0.08);
+  padding: clamp(24px, 4vw, 36px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brochure-hero-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #00b4d8 0%, #2575fc 100%);
+}
+
+.brochure-hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(14, 34, 71, 0.12);
+}
+
+.brochure-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.brochure-format-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.brochure-size-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: #5a738e;
+  background: rgba(14, 34, 71, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.brochure-title {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 800;
+  color: #0e2247;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.brochure-desc {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #506577;
+  margin: 0;
+  max-width: 580px;
+}
+
+.brochure-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 220px;
+}
+
+.brochure-btn-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+  color: #ffffff !important;
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 119, 182, 0.3);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.brochure-btn-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 119, 182, 0.42);
+  filter: brightness(1.06);
+}
+
+.brochure-btn-preview {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(0, 180, 216, 0.08);
+  color: #0077b6 !important;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1.5px solid rgba(0, 180, 216, 0.35);
+  transition: all 0.25s ease;
+}
+
+.brochure-btn-preview:hover {
+  background: rgba(0, 180, 216, 0.16);
+  border-color: #00b4d8;
+  transform: translateY(-1px);
+}
+
+/* Feature grid in brochure page */
+.brochure-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.brochure-feat-box {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  border: 1px solid rgba(22, 139, 183, 0.14);
+  box-shadow: 0 4px 16px rgba(14, 34, 71, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brochure-feat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(0, 180, 216, 0.12);
+  color: #0077b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.brochure-feat-text h4 {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: #0e2247;
+  margin: 0 0 3px;
+}
+
+.brochure-feat-text p {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Embedded interactive viewer */
+.brochure-viewer-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1.5px solid rgba(22, 139, 183, 0.16);
+  box-shadow: 0 16px 40px rgba(14, 34, 71, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brochure-viewer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(14, 34, 71, 0.14);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brochure-viewer-head span {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0e2247;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brochure-frame-container {
+  width: 100%;
+  height: 680px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(14, 34, 71, 0.12);
+  background: #f8fafc;
+}
+
+.brochure-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] .brochure-hero-card,
+[data-theme="dark"] .brochure-feat-box,
+[data-theme="dark"] .brochure-viewer-card {
+  background: var(--hx-surface) !important;
+  border-color: var(--hx-line) !important;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.45) !important;
+}
+
+[data-theme="dark"] .brochure-title,
+[data-theme="dark"] .brochure-feat-text h4,
+[data-theme="dark"] .brochure-viewer-head span {
+  color: var(--hx-text) !important;
+}
+
+[data-theme="dark"] .brochure-desc,
+[data-theme="dark"] .brochure-feat-text p {
+  color: var(--hx-dim) !important;
+}
+
+[data-theme="dark"] .brochure-size-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--hx-cyan);
+}
+
+[data-theme="dark"] .brochure-btn-preview {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--hx-cyan) !important;
+  border-color: rgba(0, 229, 255, 0.35);
+}
+
+[data-theme="dark"] .brochure-feat-icon {
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--hx-cyan);
+}
+
+[data-theme="dark"] .brochure-viewer-head {
+  border-bottom-color: var(--hx-line);
+}
+
+[data-theme="dark"] .brochure-frame-container {
+  border-color: var(--hx-line);
+  background: #0d1527;
+}
+
+@media (max-width: 768px) {
+  .brochure-hero-card {
+    grid-template-columns: 1fr;
+  }
+  .brochure-actions {
+    width: 100%;
+  }
+  .brochure-frame-container {
+    height: 480px;
+  }
+}
+
+/* ============================================================
+   BROCHURE PAGE — Showcase Layout
+   ============================================================ */
+.brochure-section {
+  padding: 60px 0 80px;
+}
+
+.brochure-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: start;
+  background: var(--hx-surface, #fff);
+  border: 1px solid rgba(22, 139, 183, 0.13);
+  border-radius: 24px;
+  padding: 44px 48px;
+  box-shadow: 0 8px 40px rgba(14, 34, 71, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.brochure-showcase::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ---- Preview Column ---- */
+.brochure-preview-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.brochure-preview-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(14, 34, 71, 0.18), 0 0 0 1px rgba(22, 139, 183, 0.18);
+  aspect-ratio: 3 / 4;
+  background: #0d1527;
+}
+
+.brochure-preview-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00e5ff, #7c3aed, #00e5ff);
+  background-size: 200% 100%;
+  animation: brochureShine 3s linear infinite;
+  z-index: 2;
+}
+
+@keyframes brochureShine {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.brochure-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.brochure-preview-label {
+  font-size: 13px;
+  color: var(--hx-dim, #6b7a99);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Info Column ---- */
+.brochure-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brochure-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(124, 58, 237, 0.12));
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  color: #0077b6;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+[data-theme="dark"] .brochure-badge {
+  color: #00e5ff;
+}
+
+.brochure-title {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--hx-text, #0e2247);
+  margin: 0;
+}
+
+.brochure-title span {
+  background: linear-gradient(135deg, #00b4d8, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brochure-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--hx-dim, #5a6a85);
+  margin: 0;
+}
+
+/* ---- Stats Row ---- */
+.brochure-stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.06), rgba(124, 58, 237, 0.06));
+  border-radius: 14px;
+  border: 1px solid rgba(0, 180, 216, 0.12);
+}
+
+.brochure-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 80px;
+  text-align: center;
+}
+
+.brochure-stat-value {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00b4d8, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brochure-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  color: var(--hx-dim, #6b7a99);
+}
+
+/* ---- Contents Checklist ---- */
+.brochure-contents {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
+.brochure-contents li {
+  font-size: 14px;
+  color: var(--hx-text, #0e2247);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brochure-check {
+  color: #00b4d8;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* ---- CTA Buttons ---- */
+.brochure-cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brochure-download-btn,
+.brochure-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.brochure-download-btn {
+  background: linear-gradient(135deg, #00b4d8, #7c3aed);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(0, 180, 216, 0.35);
+}
+
+.brochure-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(0, 180, 216, 0.45);
+  color: #fff;
+}
+
+.brochure-view-btn {
+  background: transparent;
+  color: #0077b6;
+  border-color: rgba(0, 180, 216, 0.45);
+}
+
+.brochure-view-btn:hover {
+  background: rgba(0, 180, 216, 0.08);
+  transform: translateY(-2px);
+  color: #0077b6;
+}
+
+[data-theme="dark"] .brochure-view-btn {
+  color: #00e5ff;
+  border-color: rgba(0, 229, 255, 0.35);
+}
+
+[data-theme="dark"] .brochure-view-btn:hover {
+  background: rgba(0, 229, 255, 0.08);
+  color: #00e5ff;
+}
+
+.brochure-fileinfo {
+  font-size: 12px;
+  color: var(--hx-dim, #9aa8c0);
+  margin: 0;
+}
+
+/* ---- Dark Theme overrides ---- */
+[data-theme="dark"] .brochure-showcase {
+  background: var(--hx-surface, #0d1527);
+  border-color: rgba(0, 229, 255, 0.12);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .brochure-title {
+  color: #e8f0fe;
+}
+
+[data-theme="dark"] .brochure-desc,
+[data-theme="dark"] .brochure-contents li {
+  color: #9aa8c0;
+}
+
+[data-theme="dark"] .brochure-stats {
+  background: rgba(0, 229, 255, 0.05);
+  border-color: rgba(0, 229, 255, 0.1);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .brochure-showcase {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 32px;
+  }
+
+  .brochure-preview-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .brochure-contents {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .brochure-cta-row {
+    flex-direction: column;
+  }
+
+  .brochure-download-btn,
+  .brochure-view-btn {
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   JURY PAGE — Premium Card Grid
+   ============================================================ */
+.jury-section {
+  padding: 56px 0 80px;
+}
+
+.jury-intro {
+  max-width: 720px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.jury-intro p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--hx-dim, #5a6a85);
+}
+
+/* ---- Grid ---- */
+.jury-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ---- Card ---- */
+.jury-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--hx-surface, #fff);
+  border: 1px solid rgba(22, 139, 183, 0.13);
+  box-shadow: 0 4px 24px rgba(14, 34, 71, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.jury-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 44px rgba(0, 180, 216, 0.18);
+}
+
+/* ---- Image Wrap ---- */
+.jury-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0d1527, #1a2a4a);
+}
+
+.jury-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.jury-card:hover .jury-card-img {
+  transform: scale(1.06);
+}
+
+.jury-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(13, 21, 39, 0.55) 100%);
+  pointer-events: none;
+}
+
+/* ---- Placeholder (no photo) ---- */
+.jury-card-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a1628, #1e3a5f);
+}
+
+.jury-avatar-initials {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.25);
+  user-select: none;
+  z-index: 1;
+}
+
+/* ---- Card Body ---- */
+.jury-card-body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.jury-card-name {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--hx-text, #0e2247);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.jury-card-designation {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #0077b6;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.jury-card-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 180, 216, 0.4), transparent);
+  margin: 6px 0;
+}
+
+.jury-card-org {
+  font-size: 12.5px;
+  color: var(--hx-dim, #6b7a99);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ---- Dark Theme ---- */
+[data-theme="dark"] .jury-card {
+  background: var(--hx-surface, #0d1527);
+  border-color: rgba(0, 229, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .jury-card:hover {
+  box-shadow: 0 16px 44px rgba(0, 229, 255, 0.15);
+}
+
+[data-theme="dark"] .jury-card-name {
+  color: #e8f0fe;
+}
+
+[data-theme="dark"] .jury-card-designation {
+  color: #00e5ff;
+}
+
+[data-theme="dark"] .jury-card-org {
+  color: #7a8eaa;
+}
+
+[data-theme="dark"] .jury-card-divider {
+  background: linear-gradient(90deg, rgba(0, 229, 255, 0.35), transparent);
+}
+
+[data-theme="dark"] .jury-intro p {
+  color: #7a8eaa;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .jury-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .jury-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}

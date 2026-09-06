@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Milestone time markers mapped vertically along the timeline page
   const milestones = [
-    { label: "20.08 | REG_OPEN", hex: "0xT0", yFrac: 0.14, flank: -1 },
-    { label: "10.09 | REG_CLOSE", hex: "0xT1", yFrac: 0.24, flank: 1 },
-    { label: "12.09 | PS_RELEASE", hex: "0xT2", yFrac: 0.34, flank: -1 },
-    { label: "22.09 | PROPOSAL_SUBMIT", hex: "0xT3", yFrac: 0.44, flank: 1 },
-    { label: "28.09 | SHORTLISTING", hex: "0xT4", yFrac: 0.54, flank: -1 },
-    { label: "10.10 | MENTORSHIP", hex: "0xT5", yFrac: 0.64, flank: 1 },
-    { label: "18.10 | PROTO_SUBMIT", hex: "0xT6", yFrac: 0.74, flank: -1 },
-    { label: "25.10 | GRAND_FINALE", hex: "0xT7", yFrac: 0.84, flank: -1 },
-    { label: "28.10 | WINNERS", hex: "0xT8", yFrac: 0.94, flank: 1 }
+    { label: "07.09 | REG/IDEA_OPEN", hex: "0xT0", yFrac: 0.12, flank: -1 },
+    { label: "05.10 | REG/IDEA_CLOSE", hex: "0xT1", yFrac: 0.22, flank: 1 },
+    { label: "25.10 | ROUND_1_RESULTS", hex: "0xT2", yFrac: 0.32, flank: -1 },
+    { label: "28.10 | PS_RELEASE", hex: "0xT3", yFrac: 0.42, flank: 1 },
+    { label: "01.11 | MENTORSHIP", hex: "0xT4", yFrac: 0.52, flank: -1 },
+    { label: "20.11 | PROTO_SUBMIT", hex: "0xT5", yFrac: 0.62, flank: 1 },
+    { label: "05.12 | TOP_25_SELECTED", hex: "0xT6", yFrac: 0.72, flank: -1 },
+    { label: "26.12 | FINALE_START", hex: "0xT7", yFrac: 0.82, flank: -1 },
+    { label: "27.12 | WINNERS", hex: "0xT8", yFrac: 0.92, flank: 1 }
   ];
 
   // Traveling Telemetry Pulses along side conduits
