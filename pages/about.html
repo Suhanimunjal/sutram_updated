@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<script>(function(){try{var t=localStorage.getItem("sutram-theme");if(t!=="light"&&t!=="dark"){t="light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
+<script>(function(){try{if(!localStorage.getItem("sutram-theme-v2")){localStorage.setItem("sutram-theme","light");localStorage.setItem("sutram-theme-v2","1");}var t=localStorage.getItem("sutram-theme");if(t!=="light"&&t!=="dark"){t="light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
