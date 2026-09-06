@@ -35,14 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return btn;
   }
 
-  // Desktop: drop it into the top bar next to Login. Pages without a top
-  // bar (login, registration) get a floating one instead.
+  // Theme toggle button disabled/hidden as requested
+  /*
   const topbarRight = document.querySelector(".topbar-right");
   if (topbarRight) {
     topbarRight.insertBefore(buildToggle(), topbarRight.querySelector(".login-btn"));
   } else {
     document.body.appendChild(buildToggle("floating"));
   }
+  */
 
 
   applyTheme(currentTheme());

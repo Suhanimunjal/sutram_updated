@@ -7895,8 +7895,8 @@ body.error-page {
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  width: min(580px, 92vw);
-  padding: 48px 36px 38px;
+  width: min(650px, 94vw);
+  padding: 46px 30px 36px;
   border-radius: 20px;
   text-align: center;
   overflow: hidden;
@@ -8074,13 +8074,15 @@ body.error-page {
 }
 
 .prize-overlay-tier-tag {
-  font-family: 'Space Grotesk', monospace, sans-serif;
-  font-size: 10px;
+  font-family: 'Space Grotesk', var(--font-heading), sans-serif;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #7E95BA;
-  margin-top: 2px;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: #A9BEE0;
+  margin-top: 5px;
+  line-height: 1.35;
+  text-align: center;
 }
 
 /* First Prize: gold highlights */
@@ -8096,7 +8098,7 @@ body.error-page {
   color: #F8B838;
 }
 .prize-overlay-tier-first .prize-overlay-tier-tag {
-  color: #D9A441;
+  color: #F5C768;
 }
 
 /* Second Prize: silver highlights */
@@ -8106,6 +8108,9 @@ body.error-page {
 .prize-overlay-tier-second .prize-overlay-tier-amount {
   color: #F0F4FF;
 }
+.prize-overlay-tier-second .prize-overlay-tier-tag {
+  color: #C2D6F5;
+}
 
 /* Third Prize: bronze highlights */
 .prize-overlay-tier-third {
@@ -8113,6 +8118,9 @@ body.error-page {
 }
 .prize-overlay-tier-third .prize-overlay-tier-amount {
   color: #F5DEC9;
+}
+.prize-overlay-tier-third .prize-overlay-tier-tag {
+  color: #F0C4A4;
 }
 
 @media (max-width: 480px) {
@@ -8950,9 +8958,15 @@ html[data-theme="light"], [data-theme="light"] body {
 
 /* =========================================================
    THEME TOGGLE (light / dark)
-   Injected by main.js into .topbar-right when a top bar
-   exists, otherwise pinned to the top-right of the viewport.
+   Hidden as requested
    ========================================================= */
+
+.theme-toggle,
+.theme-toggle.floating,
+[data-theme-toggle],
+.theme-toggle-row {
+  display: none !important;
+}
 
 .theme-toggle {
   --tt-knob: 22px;
@@ -10418,3 +10432,326 @@ html[data-theme="light"] .track {
   background: #FAFBFD !important;
 }
 
+
+
+/* ============================================================
+   FAQ PAGE — ANIMATED COMPONENTS
+   ============================================================ */
+
+/* ---------- Floating orbs ---------- */
+.faq-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: faqOrbFloat 14s ease-in-out infinite alternate;
+}
+.faq-orb-1 {
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(22,139,183,0.18) 0%, transparent 70%);
+  top: -100px; right: -80px;
+  animation-duration: 16s;
+}
+.faq-orb-2 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(242,184,36,0.13) 0%, transparent 70%);
+  bottom: 10%; left: -60px;
+  animation-duration: 20s;
+  animation-delay: -6s;
+}
+.faq-orb-3 {
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(44,123,229,0.12) 0%, transparent 70%);
+  top: 40%; left: 50%;
+  animation-duration: 18s;
+  animation-delay: -10s;
+}
+@keyframes faqOrbFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(30px, -40px) scale(1.08); }
+  100% { transform: translate(-20px, 30px) scale(0.96); }
+}
+
+/* ---------- Particle canvas ---------- */
+.faq-particles-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Hero updates ---------- */
+.faq-hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 72px 20px 48px;
+  overflow: hidden;
+}
+.faq-hero-content {
+  position: relative;
+  z-index: 2;
+}
+.faq-hero-sub {
+  margin: 0 auto;
+  max-width: 500px;
+  color: #4a7fa0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: faqFadeUp 0.7s 0.6s ease forwards;
+}
+.faq-eyebrow {
+  display: inline-block;
+  opacity: 0;
+  animation: faqFadeUp 0.6s 0.1s ease forwards;
+}
+.faq-hero h1 {
+  opacity: 0;
+  animation: faqFadeUp 0.65s 0.3s ease forwards;
+}
+@keyframes faqFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Search bar ---------- */
+.faq-search-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 36px;
+}
+.faq-search-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 620px;
+  background: #fff;
+  border: 1.5px solid rgba(22,139,183,0.2);
+  border-radius: 50px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 28px rgba(22,139,183,0.08);
+  transition: box-shadow 0.25s, border-color 0.25s;
+}
+.faq-search-inner:focus-within {
+  border-color: rgba(22,139,183,0.55);
+  box-shadow: 0 6px 36px rgba(22,139,183,0.15);
+}
+.faq-search-ico {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  color: #168bb7;
+}
+.faq-search-inner input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #183d68;
+  font-family: inherit;
+}
+.faq-search-inner input::placeholder { color: #94a9be; }
+.faq-search-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #168bb7;
+  background: rgba(22,139,183,0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.faq-search-badge.faq-badge-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------- FAQ Section wrapper ---------- */
+.faq-section {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px 72px;
+}
+.faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ---------- Animated Accordion items ---------- */
+.faq-acc-item {
+  background: #fff;
+  border-radius: 14px;
+  border: 1.5px solid rgba(22,139,183,0.12);
+  box-shadow: 0 2px 12px rgba(22,139,183,0.05);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.faq-acc-item.faq-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.faq-acc-item:hover {
+  box-shadow: 0 6px 28px rgba(22,139,183,0.13);
+  border-color: rgba(22,139,183,0.3);
+}
+.faq-acc-item.faq-open {
+  border-color: rgba(22,139,183,0.45);
+  box-shadow: 0 8px 36px rgba(22,139,183,0.14);
+}
+
+/* Question button */
+.faq-acc-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: #183d68;
+  font-size: 0.97rem;
+  font-weight: 700;
+  line-height: 1.4;
+  transition: background 0.2s;
+}
+.faq-acc-q:hover { background: rgba(22,139,183,0.035); }
+.faq-acc-item.faq-open .faq-acc-q { background: rgba(22,139,183,0.04); }
+
+/* Number badge */
+.faq-acc-num {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #168bb7;
+  background: rgba(22,139,183,0.1);
+  transition: background 0.25s, color 0.25s;
+}
+.faq-acc-item.faq-open .faq-acc-num {
+  background: #168bb7;
+  color: #fff;
+}
+
+/* Question text */
+.faq-acc-text { flex: 1; }
+
+/* Chevron icon */
+.faq-acc-icon {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  color: #94a9be;
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1), color 0.25s;
+}
+.faq-acc-icon svg { width: 100%; height: 100%; display: block; }
+.faq-acc-item.faq-open .faq-acc-icon {
+  transform: rotate(180deg);
+  color: #168bb7;
+}
+
+/* Collapsible body */
+.faq-acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(.4,0,.2,1);
+}
+.faq-acc-inner {
+  padding: 0 22px 20px 70px;
+  color: #4a7fa0;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+.faq-acc-inner a {
+  color: #168bb7;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(22,139,183,0.4);
+  transition: border-color 0.2s;
+}
+.faq-acc-inner a:hover { border-color: #168bb7; }
+.faq-acc-inner strong { color: #183d68; }
+
+
+/* ============================================================
+   FAQ PAGE - ANIMATED COMPONENTS
+   ============================================================ */
+
+.faq-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: faqOrbFloat 14s ease-in-out infinite alternate;
+}
+.faq-orb-1 { width:420px;height:420px;background:radial-gradient(circle,rgba(22,139,183,0.18) 0%,transparent 70%);top:-100px;right:-80px;animation-duration:16s; }
+.faq-orb-2 { width:320px;height:320px;background:radial-gradient(circle,rgba(242,184,36,0.13) 0%,transparent 70%);bottom:10%;left:-60px;animation-duration:20s;animation-delay:-6s; }
+.faq-orb-3 { width:260px;height:260px;background:radial-gradient(circle,rgba(44,123,229,0.12) 0%,transparent 70%);top:40%;left:50%;animation-duration:18s;animation-delay:-10s; }
+@keyframes faqOrbFloat { 0%{transform:translate(0,0) scale(1)} 50%{transform:translate(30px,-40px) scale(1.08)} 100%{transform:translate(-20px,30px) scale(0.96)} }
+
+.faq-particles-canvas { position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0; }
+
+.faq-hero { position:relative;z-index:1;text-align:center;padding:72px 20px 48px;overflow:hidden; }
+.faq-hero-content { position:relative;z-index:2; }
+.faq-hero-sub { margin:0 auto;max-width:500px;color:#4a7fa0;font-size:1.05rem;font-weight:500;opacity:0;transform:translateY(14px);animation:faqFadeUp 0.7s 0.6s ease forwards; }
+.faq-eyebrow { display:inline-block;opacity:0;animation:faqFadeUp 0.6s 0.1s ease forwards; }
+.faq-hero h1 { opacity:0;animation:faqFadeUp 0.65s 0.3s ease forwards; }
+@keyframes faqFadeUp { to{opacity:1;transform:translateY(0)} }
+
+.faq-search-wrap { position:relative;z-index:2;display:flex;justify-content:center;padding:0 20px 36px; }
+.faq-search-inner { display:flex;align-items:center;gap:10px;width:100%;max-width:620px;background:#fff;border:1.5px solid rgba(22,139,183,0.2);border-radius:50px;padding:12px 20px;box-shadow:0 4px 28px rgba(22,139,183,0.08);transition:box-shadow 0.25s,border-color 0.25s; }
+.faq-search-inner:focus-within { border-color:rgba(22,139,183,0.55);box-shadow:0 6px 36px rgba(22,139,183,0.15); }
+.faq-search-ico { width:18px;height:18px;flex-shrink:0;color:#168bb7; }
+.faq-search-inner input { flex:1;border:none;outline:none;background:transparent;font-size:0.95rem;color:#183d68;font-family:inherit; }
+.faq-search-inner input::placeholder { color:#94a9be; }
+.faq-search-badge { font-size:0.75rem;font-weight:700;color:#168bb7;background:rgba(22,139,183,0.1);padding:3px 10px;border-radius:20px;white-space:nowrap;opacity:0;transform:scale(0.8);transition:opacity 0.2s,transform 0.2s; }
+.faq-search-badge.faq-badge-visible { opacity:1;transform:scale(1); }
+
+.faq-section { position:relative;z-index:2;padding:0 20px 72px; }
+.faq-list { max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px; }
+
+.faq-acc-item { background:#fff;border-radius:14px;border:1.5px solid rgba(22,139,183,0.12);box-shadow:0 2px 12px rgba(22,139,183,0.05);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease,box-shadow 0.25s ease,border-color 0.25s ease; }
+.faq-acc-item.faq-visible { opacity:1;transform:translateY(0); }
+.faq-acc-item:hover { box-shadow:0 6px 28px rgba(22,139,183,0.13);border-color:rgba(22,139,183,0.3); }
+.faq-acc-item.faq-open { border-color:rgba(22,139,183,0.45);box-shadow:0 8px 36px rgba(22,139,183,0.14); }
+
+.faq-acc-q { width:100%;display:flex;align-items:center;gap:16px;padding:20px 22px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:inherit;color:#183d68;font-size:0.97rem;font-weight:700;line-height:1.4;transition:background 0.2s; }
+.faq-acc-q:hover { background:rgba(22,139,183,0.035); }
+.faq-acc-item.faq-open .faq-acc-q { background:rgba(22,139,183,0.04); }
+
+.faq-acc-num { flex-shrink:0;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:800;letter-spacing:0.5px;color:#168bb7;background:rgba(22,139,183,0.1);transition:background 0.25s,color 0.25s; }
+.faq-acc-item.faq-open .faq-acc-num { background:#168bb7;color:#fff; }
+.faq-acc-text { flex:1; }
+
+.faq-acc-icon { flex-shrink:0;width:22px;height:22px;color:#94a9be;transition:transform 0.35s cubic-bezier(.4,0,.2,1),color 0.25s; }
+.faq-acc-icon svg { width:100%;height:100%;display:block; }
+.faq-acc-item.faq-open .faq-acc-icon { transform:rotate(180deg);color:#168bb7; }
+
+.faq-acc-body { max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(.4,0,.2,1); }
+.faq-acc-inner { padding:0 22px 20px 70px;color:#4a7fa0;font-size:0.93rem;line-height:1.7; }
+.faq-acc-inner a { color:#168bb7;font-weight:600;text-decoration:none;border-bottom:1px dashed rgba(22,139,183,0.4);transition:border-color 0.2s; }
+.faq-acc-inner a:hover { border-color:#168bb7; }
+.faq-acc-inner strong { color:#183d68; }

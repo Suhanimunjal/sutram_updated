@@ -98,80 +98,176 @@
   <a class="active" href="faq.html">FAQ</a>
 </nav>
 
+<!-- Floating orbs background -->
+<div class="faq-orb faq-orb-1"></div>
+<div class="faq-orb faq-orb-2"></div>
+<div class="faq-orb faq-orb-3"></div>
+
 <section class="faq-hero">
-  <div class="faq-grid"></div>
+  <canvas id="faqParticles" class="faq-particles-canvas"></canvas>
   <div class="faq-hero-content">
-    <span class="faq-eyebrow">SUTRAM 2026</span>
-    <h1>Frequently Asked <span>Questions</span></h1>
+    <span class="faq-eyebrow" id="faqEyebrow">SUTRAM 2026</span>
+    <h1 id="faqH1">Frequently Asked <span>Questions</span></h1>
+    <p class="faq-hero-sub">Everything you need to know about the hackathon</p>
   </div>
 </section>
 
-<section class="faq-section">
-  <div class="faq-list">
-      <details class="faq-item">
-        <summary>What is SUTRAM 2026?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Who is eligible to participate in SUTRAM 2026?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>What is the maximum team size?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>How can I register for SUTRAM 2026?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Where can I find the problem statements?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>What is the Online National Quiz?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>How do I submit my project?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>How will the mentorship process work?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>How will projects be evaluated?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>What is the Grand Finale?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Will participants receive certificates?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>What technology stack can I use?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Can I use open-source libraries and tools?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Are there any hardware requirements?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Will accommodation be provided?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Will internet facilities be available?</summary>
-        <div class="faq-answer"><p>Answer</p></div>
-      </details>
+<!-- Search bar -->
+<div class="faq-search-wrap">
+  <div class="faq-search-inner">
+    <svg class="faq-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+    <input type="text" id="faqSearch" placeholder="Search questions…" autocomplete="off" />
+    <span class="faq-search-badge" id="faqBadge"></span>
+  </div>
+</div>
+
+<section class="faq-section" id="faqSection">
+  <div class="faq-list" id="faqList">
+
+    <div class="faq-acc-item" data-index="0">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">01</span>
+        <span class="faq-acc-text">What is SUTRAM 2026?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>SUTRAM 2026 is a premier AI-powered Cyber Investigation &amp; Digital Forensics Hackathon hosted by IGDTUW (Indira Gandhi Delhi Technical University for Women), supported by MeitY and ISEA. It challenges participants to build innovative solutions across cybersecurity and digital forensics domains within 24 hours.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="1">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">02</span>
+        <span class="faq-acc-text">Who is eligible to participate in SUTRAM 2026?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>All students currently enrolled in undergraduate or postgraduate programs at recognized universities/colleges across India are eligible. The hackathon is open to all disciplines — not just computer science students.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="2">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">03</span>
+        <span class="faq-acc-text">What is the maximum team size?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Teams can have a minimum of 2 and a maximum of 4 members. Solo participation is not allowed. All team members must be enrolled students at the time of registration.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="3">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">04</span>
+        <span class="faq-acc-text">How can I register for SUTRAM 2026?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Registration is done online through the official SUTRAM 2026 portal. Navigate to the <a href="registration.html">Registration page</a>, fill in your team details, and submit before the deadline (10 September 2026). Registration is free of charge.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="4">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">05</span>
+        <span class="faq-acc-text">Where can I find the problem statements?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Problem statements will be released on <strong>12 September 2026</strong> on the <a href="problem-statements.html">Problem Statements page</a>. There are 5 problem statements spanning different cybersecurity and digital forensics themes.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="5">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">06</span>
+        <span class="faq-acc-text">What is the Online National Quiz?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>The Online National Quiz is an optional knowledge-based challenge covering cybersecurity concepts, digital forensics, and current events. It is open to all registered participants and winners receive special recognition.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="6">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">07</span>
+        <span class="faq-acc-text">How do I submit my project?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Project submission is via the <a href="submission.html">Project Submission portal</a>. Teams must upload a working prototype or demo, along with a project report and presentation slides by the specified deadline. Late submissions will not be accepted.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="7">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">08</span>
+        <span class="faq-acc-text">How will the mentorship process work?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Shortlisted teams will be assigned dedicated mentors from industry and academia. Mentorship sessions are scheduled from <strong>10 October 2026</strong>. Mentors will guide teams on technical approach, feasibility, and presentation skills.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="8">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">09</span>
+        <span class="faq-acc-text">How will projects be evaluated?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Projects are judged on: <strong>Innovation &amp; Creativity</strong>, <strong>Technical Complexity</strong>, <strong>Feasibility &amp; Impact</strong>, <strong>Presentation Quality</strong>, and <strong>Problem Relevance</strong>. See the <a href="evaluation.html">Evaluation Criteria page</a> for full weightage details.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="9">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">10</span>
+        <span class="faq-acc-text">What is the Grand Finale?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>The Grand Finale is the final in-person hackathon event held on <strong>25 October 2026</strong> at IGDTUW, Delhi. Shortlisted teams will present their solutions to a jury panel. The top teams compete for a prize pool of <strong>₹2.5 Lakhs+</strong>.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="10">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">11</span>
+        <span class="faq-acc-text">Will participants receive certificates?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Yes! All participants who complete the hackathon will receive a <strong>digital participation certificate</strong>. Winners and runners-up receive additional award certificates and trophies. Mentors and jury members will also receive appreciation certificates.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="11">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">12</span>
+        <span class="faq-acc-text">What technology stack can I use?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Teams are free to use any programming language, framework, or platform. Commonly used stacks include Python, JavaScript, React, Node.js, TensorFlow, and cloud platforms like AWS or GCP. The solution must be original work developed during the hackathon.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="12">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">13</span>
+        <span class="faq-acc-text">Can I use open-source libraries and tools?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Yes, open-source libraries, APIs, and tools are allowed and encouraged. However, the core solution and its novelty must be your team's original work. Properly attribute all third-party resources used in your project report.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="13">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">14</span>
+        <span class="faq-acc-text">Are there any hardware requirements?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Teams should bring their own laptops. The venue will provide power outlets and internet connectivity. Specialized hardware (e.g., Raspberry Pi, Arduino) may be used but must be brought by the team. Availability cannot be guaranteed at the venue.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="14">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">15</span>
+        <span class="faq-acc-text">Will accommodation be provided?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Yes, outstation participants will be provided with accommodation at the IGDTUW campus during the Grand Finale dates. Meals and refreshments during the hackathon event will also be provided. Details will be shared with shortlisted teams via email.</p></div></div>
+    </div>
+
+    <div class="faq-acc-item" data-index="15">
+      <button class="faq-acc-q" aria-expanded="false">
+        <span class="faq-acc-num">16</span>
+        <span class="faq-acc-text">Will internet facilities be available?</span>
+        <span class="faq-acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-acc-body"><div class="faq-acc-inner"><p>Yes, high-speed Wi-Fi will be available throughout the venue for all participants during the Grand Finale. Teams are advised to also carry backup mobile data connections for redundancy.</p></div></div>
+    </div>
+
   </div>
 </section>
 
@@ -276,5 +372,128 @@
 <div class="nav-backdrop" id="navBackdrop"></div>
 
 <script src="../js/main.js"></script>
+<script>
+/* =====================  FAQ PAGE ANIMATIONS  ===================== */
+(function () {
+  /* --- Accordion --- */
+  document.querySelectorAll('.faq-acc-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-acc-item');
+      var isOpen = item.classList.contains('faq-open');
+      /* close all */
+      document.querySelectorAll('.faq-acc-item.faq-open').forEach(function (el) {
+        el.classList.remove('faq-open');
+        el.querySelector('.faq-acc-q').setAttribute('aria-expanded', 'false');
+        var body = el.querySelector('.faq-acc-body');
+        body.style.maxHeight = '0';
+      });
+      if (!isOpen) {
+        item.classList.add('faq-open');
+        btn.setAttribute('aria-expanded', 'true');
+        var body = item.querySelector('.faq-acc-body');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* --- Live Search --- */
+  var searchEl = document.getElementById('faqSearch');
+  var badge    = document.getElementById('faqBadge');
+  var items    = Array.from(document.querySelectorAll('.faq-acc-item'));
+
+  function doSearch() {
+    var q = searchEl.value.trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function (item) {
+      var text = item.querySelector('.faq-acc-text').textContent.toLowerCase()
+               + item.querySelector('.faq-acc-inner').textContent.toLowerCase();
+      var match = !q || text.includes(q);
+      item.style.display = match ? '' : 'none';
+      if (match) shown++;
+    });
+    badge.textContent = q ? shown + ' result' + (shown !== 1 ? 's' : '') : '';
+    badge.classList.toggle('faq-badge-visible', !!q);
+  }
+  if (searchEl) searchEl.addEventListener('input', doSearch);
+
+  /* --- Scroll-in animation --- */
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('faq-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  items.forEach(function (item, i) {
+    item.style.transitionDelay = (i * 55) + 'ms';
+    observer.observe(item);
+  });
+
+  /* Hero eyebrow typewriter */
+  var ew = document.getElementById('faqEyebrow');
+  if (ew) { ew.classList.add('faq-eyebrow-anim'); }
+
+  /* --- Canvas Particles --- */
+  var canvas = document.getElementById('faqParticles');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var PARTICLE_COUNT = 55;
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (var i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push({
+      x:  Math.random() * canvas.width,
+      y:  Math.random() * canvas.height,
+      r:  Math.random() * 2.5 + 0.5,
+      dx: (Math.random() - 0.5) * 0.45,
+      dy: (Math.random() - 0.5) * 0.45,
+      a:  Math.random() * 0.55 + 0.15
+    });
+  }
+
+  function drawFrame() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(function (p) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(22,139,183,' + p.a + ')';
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+    });
+    /* connecting lines */
+    for (var i = 0; i < particles.length; i++) {
+      for (var j = i + 1; j < particles.length; j++) {
+        var dx = particles[i].x - particles[j].x;
+        var dy = particles[i].y - particles[j].y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 90) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(22,139,183,' + (0.12 * (1 - dist / 90)) + ')';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(drawFrame);
+  }
+  drawFrame();
+})();
+</script>
 </body>
 </html>
