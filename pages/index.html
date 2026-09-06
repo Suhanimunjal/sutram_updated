@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+  <!-- 3D Interactive Cyber Forensics Mesh Canvas (Full Page Background) -->
+  <canvas id="cyber3dCanvas" class="cyber-3d-canvas" aria-hidden="true"></canvas>
+
   <div class="page">
     <main class="announcement">
       <header class="topbar">
@@ -101,84 +104,78 @@
         <a href="faq.html">FAQ</a>
       </nav>
 
-      <section class="content">
-        <h2 class="main-theme-heading">
-          AI-Powered Cyber Investigation &amp;<br />
-          Digital Forensics <span class="hackathon-highlight">Hackathon</span>
-        </h2>
-
-        <h1 class="hero-logo-heading">
-          <img class="sutram-hero-logo theme-logo theme-logo-dark" src="../assets/images/logos/sutram_exact_full_logo_light.png" alt="SUTRAM 2026 - Where Every Trace Connects" /><img class="sutram-hero-logo theme-logo theme-logo-light" src="../assets/images/logos/sutram_exact_full_logo.png" alt="" aria-hidden="true" />
-          <span class="sr-only">SUTRAM 2026</span>
-        </h1>
-
-        <p class="tagline">WHERE EVERY TRACE CONNECTS</p>
-
-        <div class="hero-cta-row">
-
-  <a class="hero-cta secondary" href="problem-statements.html">
-    Problem Statements <span class="cta-arrow">↗</span>
-</a>
-
-<a class="hero-cta gold" href="registration.html">
-    Register Now <span class="cta-arrow">↗</span>
-</a>
-
-</div>
-
-        <div class="hero-countdown-light" data-vtl-countdown data-vtl-fixed-target="2026-12-25" data-vtl-fixed-label="Grand Finale">
-          <span class="hero-countdown-light-label" data-vtl-countdown-label>Grand Finale in</span>
-
-          <div class="countdown hero-countdown-grid">
-            <div class="unit">
-              <div class="number" data-vtl-countdown-days>00</div>
-              <div class="label">Days</div>
+      <section class="hero">
+        <div class="wrap">
+          <div class="hero-inner">
+            <div class="kicker">
+              <span class="cyber-radar" aria-hidden="true">
+                <span class="radar-sweep"></span>
+                <span class="radar-dot"></span>
+              </span>
+              AI-powered cyber investigation &amp; digital forensics hackathon
             </div>
-            <div class="unit">
-              <div class="number" data-vtl-countdown-hours>00</div>
-              <div class="label">Hours</div>
+            <h1>Where every <span class="accent">SUTRAM</span> connects</h1>
+            <p class="sub">Build the next generation of investigative tooling &mdash; trace digital evidence, model attacker behaviour, and help justice move as fast as the crime.</p>
+            <div class="terminal-scan" aria-live="polite">
+              <span class="terminal-prompt">&gt;</span>
+              <span class="terminal-text" id="terminalScanText">scanning network traffic for anomalies...</span><span class="terminal-cursor"></span>
             </div>
-            <div class="unit">
-              <div class="number" data-vtl-countdown-minutes>00</div>
-              <div class="label">Mins</div>
-            </div>
-            <div class="unit">
-              <div class="number" data-vtl-countdown-seconds>00</div>
-              <div class="label">Secs</div>
+            <div class="cta-row">
+              <a href="registration.html" class="btn btn-primary">Register now</a>
+              <a href="problem-statements.html" class="btn btn-secondary">Problem statements</a>
             </div>
           </div>
 
-          <span class="hero-countdown-light-date" data-vtl-countdown-date></span>
-
-          <div class="hero-facts-badges">
-            <div class="hero-fact-badge hero-fact-badge-date">
-              <span class="hero-fact-badge-icon">📅</span>
-              <span class="hero-fact-badge-text">
-                <span class="hero-fact-badge-label">Finale</span>
-                <span class="hero-fact-badge-value">25 Dec 2026</span>
-              </span>
+          <div class="panel">
+            <div class="panel-head">
+              <span>GRAND FINALE COUNTDOWN</span>
+              <span>FRI 25 DEC 2026</span>
             </div>
-
-            <div class="hero-fact-badge hero-fact-badge-venue">
-              <span class="hero-fact-badge-icon">📍</span>
-              <span class="hero-fact-badge-text">
-                <span class="hero-fact-badge-label">Venue</span>
-                <span class="hero-fact-badge-value">IGDTUW, Delhi</span>
-              </span>
+            <div class="timer" data-vtl-countdown data-vtl-fixed-target="2026-12-25" data-vtl-fixed-label="Grand Finale">
+              <div class="cell"><div class="num" data-vtl-countdown-days>109</div><div class="lbl">DAYS</div></div>
+              <div class="cell"><div class="num" data-vtl-countdown-hours>10</div><div class="lbl">HOURS</div></div>
+              <div class="cell"><div class="num" data-vtl-countdown-minutes>08</div><div class="lbl">MINS</div></div>
+              <div class="cell"><div class="num" data-vtl-countdown-seconds>44</div><div class="lbl">SECS</div></div>
             </div>
+            <div class="meta-row">
+              <div class="meta"><span class="k">FINALE</span><span class="v">25 Dec 2026</span></div>
+              <div class="meta"><span class="k">VENUE</span><span class="v">IGDTUW, Delhi</span></div>
+            </div>
+            <div class="prize-strip">
+              <span class="k">PRIZE POOL &mdash; SEALED</span>
+              <button type="button" class="reveal-btn" data-prize-reveal>Tap to reveal</button>
+            </div>
+          </div>
 
-            <button type="button" class="hero-fact-badge hero-fact-badge-prize" data-prize-reveal aria-expanded="false" aria-haspopup="dialog">
-              <span class="hero-fact-badge-icon" data-prize-icon>🏆</span>
-              <span class="hero-fact-badge-text">
-                <span class="hero-fact-badge-label" data-prize-label>Tap to Reveal</span>
-                <span class="hero-fact-badge-value" data-prize-value>Prize Pool</span>
-              </span>
-            </button>
+          <!-- CYBER INVESTIGATION TERMINAL WINDOW -->
+          <div class="cyber-terminal-window" role="region" aria-label="Live Investigation Terminal">
+            <div class="cyber-terminal-header">
+              <div class="cyber-terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="cyber-terminal-title">sutram_forensics &mdash; investigation.sh</div>
+            </div>
+            <div class="cyber-terminal-body" id="cyberTerminalBody">
+              <!-- Lines typed dynamically by JavaScript -->
+            </div>
           </div>
         </div>
-
-      <p class="message">Get ready to innovate, investigate, and inspire justice with AI.<br /><strong>Stay tuned!</strong></p>
       </section>
+
+      <!-- STATS SECTION -->
+      <section class="stats">
+        <div class="wrap">
+          <div class="stats-grid">
+            <div class="stat"><div class="n">₹10L+</div><div class="l">Total prize pool</div></div>
+            <div class="stat"><div class="n">36</div><div class="l">Hours to build</div></div>
+            <div class="stat"><div class="n">8</div><div class="l">Problem statements</div></div>
+            <div class="stat"><div class="n">500+</div><div class="l">Expected participants</div></div>
+          </div>
+        </div>
+      </section>
+
 
       <!-- GRAND PRIZE REVEAL OVERLAY -->
       <div class="prize-overlay" data-prize-overlay hidden>
@@ -186,27 +183,27 @@
         <div class="prize-overlay-panel" role="dialog" aria-modal="true" aria-label="Grand Prize Pool Reveal">
           <button type="button" class="prize-overlay-close" data-prize-overlay-close aria-label="Close">&times;</button>
           <span class="prize-overlay-confetti" data-prize-overlay-confetti aria-hidden="true"></span>
-          <span class="prize-overlay-eyebrow">🎉 Grand Prize Pool 🎉</span>
-          <span class="prize-overlay-amount">₹2.5 Lakh</span>
+          <span class="prize-overlay-eyebrow">Grand Prize Pool</span>
+          <span class="prize-overlay-amount">&#8377;10+ Lakh</span>
           <div class="prize-overlay-tiers">
             <div class="prize-overlay-tier prize-overlay-tier-first">
               <span class="prize-overlay-tier-medal" aria-hidden="true">&#129351;</span>
               <span class="prize-overlay-tier-rank">First Prize</span>
-              <span class="prize-overlay-tier-amount">&#8377;1,25,000</span>
+              <span class="prize-overlay-tier-amount">&#8377;5,00,000</span>
               <span class="prize-overlay-tier-tag">Winner</span>
             </div>
 
             <div class="prize-overlay-tier prize-overlay-tier-second">
               <span class="prize-overlay-tier-medal" aria-hidden="true">&#129352;</span>
               <span class="prize-overlay-tier-rank">Second Prize</span>
-              <span class="prize-overlay-tier-amount">&#8377;75,000</span>
+              <span class="prize-overlay-tier-amount">&#8377;3,00,000</span>
               <span class="prize-overlay-tier-tag">Runner-up</span>
             </div>
 
             <div class="prize-overlay-tier prize-overlay-tier-third">
               <span class="prize-overlay-tier-medal" aria-hidden="true">&#129353;</span>
               <span class="prize-overlay-tier-rank">Third Prize</span>
-              <span class="prize-overlay-tier-amount">&#8377;50,000</span>
+              <span class="prize-overlay-tier-amount">&#8377;2,00,000</span>
               <span class="prize-overlay-tier-tag">Second Runner-up</span>
             </div>
           </div>
@@ -216,7 +213,7 @@
 
       <footer class="page-footer">
         <div class="footer-container">
-          <section class="footer-col">
+          <section class="footer-col" id="socials">
             <h2>Follow Us</h2>
             <div class="social-buttons">
               <a href="https://www.instagram.com/sutram_2026?igsh=MTRsaG00M3dqNG5oaA==" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">
@@ -243,7 +240,7 @@
               </a>
               <div class="contact-link-item">
                 <span class="contact-icon-badge">🏛</span>
-                <span>Indira Gandhi Delhi Technical University for Women, Delhi – 110006, India</span>
+                <span>Indira Gandhi Delhi Technical University for Women, Delhi &ndash; 110006, India</span>
               </div>
             </div>
           </section>

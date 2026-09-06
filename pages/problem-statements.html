@@ -151,93 +151,73 @@
 
         <div class="problem-grid">
 
-          <article class="problem-card">
+          <article class="problem-card ps-live-card" data-ps="ps01">
             <div class="card-top">
               <span class="problem-number">PS01</span>
-              <span class="card-icon">⌁</span>
             </div>
-            <div class="card-graphic">
-              <span class="node n1"></span>
-              <span class="node n2"></span>
-              <span class="node n3"></span>
-              <span class="trace"></span>
+            <div class="card-graphic ps-viewport">
+              <canvas class="ps-canvas" id="canvasPS01" width="200" height="140" aria-label="Live 3D Mobile Evidence Scan"></canvas>
             </div>
             <h3>AI-Assisted Mobile Evidence Intelligence</h3>
             <div class="card-footer">
               <span>Problem Statement 01</span>
-              <span class="status">Details to be announced</span>
+              <span class="status"><span class="status-radar-dot"></span>Forensic scan active</span>
             </div>
           </article>
 
-          <article class="problem-card">
+          <article class="problem-card ps-live-card" data-ps="ps02">
             <div class="card-top">
               <span class="problem-number">PS02</span>
-              <span class="card-icon">◈</span>
             </div>
-            <div class="card-graphic">
-              <span class="node n1"></span>
-              <span class="node n2"></span>
-              <span class="node n3"></span>
-              <span class="trace"></span>
+            <div class="card-graphic ps-viewport">
+              <canvas class="ps-canvas" id="canvasPS02" width="200" height="140" aria-label="Live 3D Biometric Face Scan"></canvas>
             </div>
             <h3>Multimedia Evidence Authentication &amp; Deepfake Detection</h3>
             <div class="card-footer">
               <span>Problem Statement 02</span>
-              <span class="status">Details to be announced</span>
+              <span class="status"><span class="status-radar-dot"></span>Authenticity analyzer</span>
             </div>
           </article>
 
-          <article class="problem-card">
+          <article class="problem-card ps-live-card" data-ps="ps03">
             <div class="card-top">
               <span class="problem-number">PS03</span>
-              <span class="card-icon">⌘</span>
             </div>
-            <div class="card-graphic">
-              <span class="node n1"></span>
-              <span class="node n2"></span>
-              <span class="node n3"></span>
-              <span class="trace"></span>
+            <div class="card-graphic ps-viewport">
+              <canvas class="ps-canvas" id="canvasPS03" width="200" height="140" aria-label="Live 3D Crime Reconstruction Timeline"></canvas>
             </div>
             <h3>Digital Evidence Correlation &amp; Crime Reconstruction</h3>
             <div class="card-footer">
               <span>Problem Statement 03</span>
-              <span class="status">Details to be announced</span>
+              <span class="status"><span class="status-radar-dot"></span>Timeline correlation</span>
             </div>
           </article>
 
-          <article class="problem-card">
+          <article class="problem-card ps-live-card" data-ps="ps04">
             <div class="card-top">
               <span class="problem-number">PS04</span>
-              <span class="card-icon">⌬</span>
             </div>
-            <div class="card-graphic">
-              <span class="node n1"></span>
-              <span class="node n2"></span>
-              <span class="node n3"></span>
-              <span class="trace"></span>
+            <div class="card-graphic ps-viewport">
+              <canvas class="ps-canvas" id="canvasPS04" width="200" height="140" aria-label="Live 3D Threat Attribution Network"></canvas>
             </div>
             <h3>AI-Powered Cyber Fraud Investigation &amp; Attribution</h3>
             <div class="card-footer">
               <span>Problem Statement 04</span>
-              <span class="status">Details to be announced</span>
+              <span class="status"><span class="status-radar-dot"></span>Threat attribution active</span>
             </div>
           </article>
 
-          <article class="problem-card problem-card-wide">
+          <article class="problem-card problem-card-wide ps-live-card" data-ps="ps05">
             <div class="card-top">
               <span class="problem-number">PS05</span>
-              <span class="card-icon">◎</span>
             </div>
-            <div class="card-graphic">
-              <span class="node n1"></span>
-              <span class="node n2"></span>
-              <span class="node n3"></span>
-              <span class="trace"></span>
+            <div class="card-graphic ps-viewport ps-viewport-wide">
+              <canvas class="ps-canvas" id="canvasPS05" width="260" height="140" aria-label="Live 3D AI Assistant Core"></canvas>
             </div>
             <h3>AI-Powered Digital Investigation Assistant</h3>
             <div class="card-footer">
               <span>Problem Statement 05</span>
-              <span class="status">Details to be announced</span>
+              <span class="status"><span class="status-radar-dot"></span>Autonomous assistant core</span>
             </div>
           </article>
 
@@ -360,5 +340,6 @@
   <div class="nav-backdrop" id="navBackdrop"></div>
 
   <script src="../js/main.js"></script>
+  <script src="../js/ps-forensics.js"></script>
 </body>
 </html>
